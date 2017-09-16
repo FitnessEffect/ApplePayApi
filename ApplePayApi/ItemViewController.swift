@@ -7,17 +7,22 @@
 //
 
 import UIKit
+import PassKit
 
 class ItemViewController: UIViewController {
     
-    var cellNumber = ""
+    var cellNumber = 0
 
     @IBOutlet weak var item: UILabel!
+    @IBOutlet weak var applePayButton: UIButton!
+    
+    let SupportedPaymentNetworks = [PKPaymentNetwork.visa, PKPaymentNetwork.masterCard, PKPaymentNetwork.amex]
+    let ApplePaySwagMerchantID = "merchant.com.gmail.ApplePayApi" // Fill in your merchant ID here!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        item.text = "$" + cellNumber 
-        // Do any additional setup after loading the view.
+        item.text = "$" + String(cellNumber)
+        applePayButton.isHidden = !PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: SupportedPaymentNetworks)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +31,23 @@ class ItemViewController: UIViewController {
     }
     
     func setCellNumber(x:Int){
-        cellNumber = String(x + 1)
+        cellNumber = x + 1
+    }
+    
+    
+    @IBAction func purchase(_ sender: UIButton) {
+        let request = PKPaymentRequest()
+        request.merchantIdentifier = ApplePaySwagMerchantID
+        request.supportedNetworks = SupportedPaymentNetworks
+        request.merchantCapabilities = PKMerchantCapability.capability3DS
+        request.countryCode = "US"
+        request.currencyCode = "USD"
+        request.paymentSummaryItems = [
+            PKPaymentSummaryItem(label: "user", amount: NSDecimalNumber(integerLiteral: cellNumber)),
+            PKPaymentSummaryItem(label: "Stefan", amount: NSDecimalNumber(integerLiteral: cellNumber))
+        ]
+        let applePayController = PKPaymentAuthorizationViewController(paymentRequest: request)
+        self.present(applePayController, animated: true, completion: nil)
     }
 
     /*

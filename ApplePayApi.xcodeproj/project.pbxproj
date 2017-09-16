@@ -40,6 +40,7 @@
 		520C32D61F6D71520012721D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		523108C01F6D74D4001900FF /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		523108C21F6D7689001900FF /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		523108C41F6D7C36001900FF /* ApplePayApi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ApplePayApi.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 		520C32BE1F6D71520012721D /* ApplePayApi */ = {
 			isa = PBXGroup;
 			children = (
+				523108C41F6D7C36001900FF /* ApplePayApi.entitlements */,
 				520C32BF1F6D71520012721D /* AppDelegate.swift */,
 				520C32C11F6D71520012721D /* ViewController.swift */,
 				523108C01F6D74D4001900FF /* ItemCollectionViewCell.swift */,
@@ -154,6 +156,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = JF325HQHWJ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
+						};
 					};
 					520C32CF1F6D71520012721D = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -349,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ApplePayApi/ApplePayApi.entitlements;
 				DEVELOPMENT_TEAM = JF325HQHWJ;
 				INFOPLIST_FILE = ApplePayApi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -362,6 +370,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ApplePayApi/ApplePayApi.entitlements;
 				DEVELOPMENT_TEAM = JF325HQHWJ;
 				INFOPLIST_FILE = ApplePayApi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
