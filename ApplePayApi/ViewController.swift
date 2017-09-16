@@ -49,6 +49,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "itemVC") as! ItemViewController
+        controller.setCellNumber(x: indexPath.row)
+        self.present(controller, animated: true, completion: nil)
     }
     
 }

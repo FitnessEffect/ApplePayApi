@@ -14,6 +14,7 @@
 		520C32CA1F6D71520012721D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520C32C81F6D71520012721D /* LaunchScreen.storyboard */; };
 		520C32D51F6D71520012721D /* ApplePayApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C32D41F6D71520012721D /* ApplePayApiTests.swift */; };
 		523108C11F6D74D4001900FF /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523108C01F6D74D4001900FF /* ItemCollectionViewCell.swift */; };
+		523108C31F6D7689001900FF /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523108C21F6D7689001900FF /* ItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		520C32D41F6D71520012721D /* ApplePayApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayApiTests.swift; sourceTree = "<group>"; };
 		520C32D61F6D71520012721D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		523108C01F6D74D4001900FF /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		523108C21F6D7689001900FF /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				520C32C11F6D71520012721D /* ViewController.swift */,
 				523108C01F6D74D4001900FF /* ItemCollectionViewCell.swift */,
 				520C32C31F6D71520012721D /* Main.storyboard */,
+				523108C21F6D7689001900FF /* ItemViewController.swift */,
 				520C32C61F6D71520012721D /* Assets.xcassets */,
 				520C32C81F6D71520012721D /* LaunchScreen.storyboard */,
 				520C32CB1F6D71520012721D /* Info.plist */,
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				523108C11F6D74D4001900FF /* ItemCollectionViewCell.swift in Sources */,
+				523108C31F6D7689001900FF /* ItemViewController.swift in Sources */,
 				520C32C21F6D71520012721D /* ViewController.swift in Sources */,
 				520C32C01F6D71520012721D /* AppDelegate.swift in Sources */,
 			);
