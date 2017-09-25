@@ -68,8 +68,8 @@ class ItemViewController: UIViewController {
         ]
         request.requiredShippingAddressFields = PKAddressField.postalAddress
         let applePayController = PKPaymentAuthorizationViewController(paymentRequest: request)
-        applePayController.delegate = self
-        self.present(applePayController, animated: true, completion: nil)
+        applePayController?.delegate = self
+        self.present(applePayController!, animated: true, completion: nil)
     }
 
     /*
