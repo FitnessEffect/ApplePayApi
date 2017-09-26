@@ -12,24 +12,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
     var items = ["1", "2","3"]
+    var itemList = [String]()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //store words from file in wordList array
+        if let path = Bundle.main.path(forResource: "itemsList", ofType: "json") {
+            do {
+                let data = try String(contentsOfFile: path, encoding: .utf8)
+                itemList = data.components(separatedBy: "\r\n")
 
-        if let path = Bundle.main.path(forResource: "itemsList", ofType: "txt")
-        {
-            print(path)
-//            if let jsonData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)
-//            {
-//                if let jsonResult: NSDictionary = JSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary
-//                {
-//                    if let persons : NSArray = jsonResult["person"] as? NSArray
-//                    {
-//                        // Do stuff
-//                    }
-//                }
-//            }
+            } catch {
+                print(error)
+            }
         }
     }
 
