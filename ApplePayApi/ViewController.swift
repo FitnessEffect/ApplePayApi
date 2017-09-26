@@ -11,12 +11,26 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
+    var items = ["1", "2","3"]
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        if let path = Bundle.main.path(forResource: "itemsList", ofType: "txt")
+        {
+            print(path)
+//            if let jsonData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)
+//            {
+//                if let jsonResult: NSDictionary = JSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary
+//                {
+//                    if let persons : NSArray = jsonResult["person"] as? NSArray
+//                    {
+//                        // Do stuff
+//                    }
+//                }
+//            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,7 +66,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "itemVC") as! ItemViewController
         controller.setCellNumber(x: indexPath.row)
-        self.present(controller, animated: true, completion: nil)
+        //let newViewController = NewViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+        //self.present(controller, animated: true, completion: nil)
     }
     
 }

@@ -64,7 +64,7 @@ class ItemViewController: UIViewController {
         request.paymentSummaryItems = [
             PKPaymentSummaryItem(label: "Item", amount: NSDecimalNumber(integerLiteral: cellNumber)),
             PKPaymentSummaryItem(label: "Shipping", amount: shippingPrice),
-            PKPaymentSummaryItem(label: "Stefan", amount: NSDecimalNumber(integerLiteral: (cellNumber + Int(shippingPrice))))
+            PKPaymentSummaryItem(label: "Stefan", amount: NSDecimalNumber(integerLiteral: (cellNumber + Int(truncating: shippingPrice))))
         ]
         request.requiredShippingAddressFields = PKAddressField.postalAddress
         let applePayController = PKPaymentAuthorizationViewController(paymentRequest: request)
