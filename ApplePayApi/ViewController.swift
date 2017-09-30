@@ -18,12 +18,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //store words from file in wordList array
-        if let path = Bundle.main.path(forResource: "itemsList", ofType: "json") {
+        if let path = Bundle.main.path(forResource: "items", ofType: "txt") {
             do {
                 let data = try String(contentsOfFile: path, encoding: .utf8)
                 itemList = data.components(separatedBy: "\r\n")
-
+                
             } catch {
                 print(error)
             }
