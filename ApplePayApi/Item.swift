@@ -8,13 +8,18 @@
 
 import Foundation
 
-class Item{
-    var name:String!
-    var price:Int!
-    
-    init(name:String, price:Int){
-        self.name = name
-        self.price = price
-    }
+public struct Item: Codable{
+    let name:String
+    let price:Int
+//
+//    init(name:String, price:Int){
+//        self.name = name
+//        self.price = price
+//    }
+//
+//    enum CodingKeys: String, CodingKey {
+//        case name
+//        case price
+//    }
     
 }

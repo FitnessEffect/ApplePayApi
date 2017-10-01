@@ -15,7 +15,7 @@
 		520C32D51F6D71520012721D /* ApplePayApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C32D41F6D71520012721D /* ApplePayApiTests.swift */; };
 		523108C11F6D74D4001900FF /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523108C01F6D74D4001900FF /* ItemCollectionViewCell.swift */; };
 		523108C31F6D7689001900FF /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523108C21F6D7689001900FF /* ItemViewController.swift */; };
-		52778FDF1F800393008B6398 /* items.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52778FDE1F800393008B6398 /* items.txt */; };
+		52778FDF1F800393008B6398 /* items.json in Resources */ = {isa = PBXBuildFile; fileRef = 52778FDE1F800393008B6398 /* items.json */; };
 		52AF02551F79BD84004D846A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF02541F79BD84004D846A /* Item.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +43,7 @@
 		523108C01F6D74D4001900FF /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		523108C21F6D7689001900FF /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		523108C41F6D7C36001900FF /* ApplePayApi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ApplePayApi.entitlements; sourceTree = "<group>"; };
-		52778FDE1F800393008B6398 /* items.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = items.txt; sourceTree = "<group>"; };
+		52778FDE1F800393008B6398 /* items.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = items.json; sourceTree = "<group>"; };
 		52AF02541F79BD84004D846A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +89,7 @@
 				523108C41F6D7C36001900FF /* ApplePayApi.entitlements */,
 				520C32BF1F6D71520012721D /* AppDelegate.swift */,
 				520C32C11F6D71520012721D /* ViewController.swift */,
-				52778FDE1F800393008B6398 /* items.txt */,
+				52778FDE1F800393008B6398 /* items.json */,
 				52AF02541F79BD84004D846A /* Item.swift */,
 				523108C01F6D74D4001900FF /* ItemCollectionViewCell.swift */,
 				520C32C31F6D71520012721D /* Main.storyboard */,
@@ -203,7 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				520C32CA1F6D71520012721D /* LaunchScreen.storyboard in Resources */,
-				52778FDF1F800393008B6398 /* items.txt in Resources */,
+				52778FDF1F800393008B6398 /* items.json in Resources */,
 				520C32C71F6D71520012721D /* Assets.xcassets in Resources */,
 				520C32C51F6D71520012721D /* Main.storyboard in Resources */,
 			);

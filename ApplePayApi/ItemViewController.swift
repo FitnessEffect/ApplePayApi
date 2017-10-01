@@ -10,6 +10,13 @@ import UIKit
 import PassKit
 
 class ItemViewController: UIViewController {
+
+    @IBOutlet weak var itemName: UILabel!
+    @IBOutlet weak var itemPrice: UILabel!
+    @IBOutlet weak var applePayButton: UIButton!
+    
+    var itemPassed:Item!
+    let shippingPrice: NSDecimalNumber = NSDecimalNumber(string: "5.0")
     
     struct ShippingMethod {
         let price: NSDecimalNumber
@@ -29,18 +36,13 @@ class ItemViewController: UIViewController {
             ]
     }
     
-    var cellNumber = 0
-    let shippingPrice: NSDecimalNumber = NSDecimalNumber(string: "5.0")
-
-    @IBOutlet weak var item: UILabel!
-    @IBOutlet weak var applePayButton: UIButton!
-    
     let SupportedPaymentNetworks = [PKPaymentNetwork.visa, PKPaymentNetwork.masterCard, PKPaymentNetwork.amex]
     let ApplePaySwagMerchantID = "merchant.com.gmail.ApplePayApi" // Fill in your merchant ID here!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        item.text = "$" + String(cellNumber)
+        itemName.text = itemPassed.name
+        itemPrice.text = "$" + String(itemPassed.price)
         applePayButton.isHidden = !PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: SupportedPaymentNetworks)
     }
 
@@ -49,8 +51,8 @@ class ItemViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setCellNumber(x:Int){
-        cellNumber = x + 1
+    func setItem(item:Item){
+        itemPassed = item
     }
     
     
@@ -62,9 +64,9 @@ class ItemViewController: UIViewController {
         request.countryCode = "US"
         request.currencyCode = "USD"
         request.paymentSummaryItems = [
-            PKPaymentSummaryItem(label: "Item", amount: NSDecimalNumber(integerLiteral: cellNumber)),
+            PKPaymentSummaryItem(label: "Item", amount: NSDecimalNumber(integerLiteral: itemPassed.price)),
             PKPaymentSummaryItem(label: "Shipping", amount: shippingPrice),
-            PKPaymentSummaryItem(label: "Stefan", amount: NSDecimalNumber(integerLiteral: (cellNumber + Int(truncating: shippingPrice))))
+            PKPaymentSummaryItem(label: "Stefan", amount: NSDecimalNumber(integerLiteral: (itemPassed.price + Int(truncating: shippingPrice))))
         ]
         request.requiredShippingAddressFields = PKAddressField.postalAddress
         let applePayController = PKPaymentAuthorizationViewController(paymentRequest: request)

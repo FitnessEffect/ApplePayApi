@@ -39,8 +39,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjf-zS-aaB">
+                                                    <rect key="frame" x="19" y="32" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCT-4O-3sk">
-                                                    <rect key="frame" x="15.5" y="20.5" width="42" height="21"/>
+                                                    <rect key="frame" x="19" y="3" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="qlm-Z3-lKK"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -48,11 +57,14 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="SCT-4O-3sk" firstAttribute="centerX" secondItem="2Zh-M8-uhF" secondAttribute="centerX" constant="-3.5" id="Gug-7d-GfD"/>
-                                            <constraint firstItem="SCT-4O-3sk" firstAttribute="centerY" secondItem="2Zh-M8-uhF" secondAttribute="centerY" id="nG6-sU-6CQ"/>
+                                            <constraint firstItem="vjf-zS-aaB" firstAttribute="centerX" secondItem="2Zh-M8-uhF" secondAttribute="centerX" id="Dlo-Ht-naB"/>
+                                            <constraint firstItem="SCT-4O-3sk" firstAttribute="top" secondItem="2Zh-M8-uhF" secondAttribute="top" constant="3" id="nsW-BK-X0s"/>
+                                            <constraint firstItem="vjf-zS-aaB" firstAttribute="top" secondItem="SCT-4O-3sk" secondAttribute="bottom" constant="8" id="qnD-YY-vJl"/>
+                                            <constraint firstItem="SCT-4O-3sk" firstAttribute="centerX" secondItem="2Zh-M8-uhF" secondAttribute="centerX" id="zGf-o6-h4O"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="itemLabel" destination="SCT-4O-3sk" id="WQ7-TZ-Gxc"/>
+                                            <outlet property="priceLabel" destination="vjf-zS-aaB" id="vrP-98-r3T"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -84,7 +96,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtB-LW-FIP">
-                                <rect key="frame" x="118" y="73" width="137" height="53"/>
+                                <rect key="frame" x="118" y="160" width="137" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -99,12 +111,21 @@
                                     <action selector="purchase:" destination="pom-OC-Jfn" eventType="touchUpInside" id="b3c-wN-7Q4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOL-0D-90i">
+                                <rect key="frame" x="118" y="84" width="137" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="applePayButton" destination="6oy-Zg-SGJ" id="Hx8-n9-mQs"/>
-                        <outlet property="item" destination="GtB-LW-FIP" id="kgC-eW-cK0"/>
+                        <outlet property="itemName" destination="hOL-0D-90i" id="3cr-oL-6ME"/>
+                        <outlet property="itemPrice" destination="GtB-LW-FIP" id="Xz1-n8-V4h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="csR-xT-XPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
